@@ -51,7 +51,6 @@ export default function CanvasArea({
           break;
       }
 
-      // Add justify content
       switch (layoutConfig.justifyContent) {
         case "flex-start":
           classes += " justify-start";
@@ -73,7 +72,6 @@ export default function CanvasArea({
           break;
       }
 
-      // Add align items
       switch (layoutConfig.alignItems) {
         case "flex-start":
           classes += " items-start";
@@ -104,14 +102,12 @@ export default function CanvasArea({
           break;
       }
 
-      // Add gap
       if (layoutConfig.gap) {
         classes += ` gap-${layoutConfig.gap}`;
       }
     } else if (layoutConfig.type === "grid") {
       classes += " grid";
 
-      // Add grid columns and rows
       if (layoutConfig.gridCols) {
         classes += ` grid-cols-${layoutConfig.gridCols}`;
       }
@@ -120,7 +116,6 @@ export default function CanvasArea({
         classes += ` grid-rows-${layoutConfig.gridRows}`;
       }
 
-      // Add gap
       if (layoutConfig.gap) {
         classes += ` gap-${layoutConfig.gap}`;
       }
@@ -160,7 +155,6 @@ export default function CanvasArea({
       const dx = e.clientX - startPos.x;
       const dy = e.clientY - startPos.y;
 
-      // Find the element
       const element = elements.find((el) => el.id === draggedElement);
       if (element) {
         updateElement(draggedElement, {
